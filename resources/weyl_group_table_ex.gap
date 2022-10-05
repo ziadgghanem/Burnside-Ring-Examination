@@ -41,6 +41,8 @@ local
 		
 	od;
 	
+	Print("\n", "Done ......", "\n");
+
 	return;
 end; # calculate_weyl_groups := function()
 	

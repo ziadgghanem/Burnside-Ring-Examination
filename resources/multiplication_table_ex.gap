@@ -106,6 +106,7 @@ local
 		j := j-1;
 	od;
 		
+	Print("\n", "Done ......", "\n");
 
 	return;
 end; # calculate_multiplication_table := function()

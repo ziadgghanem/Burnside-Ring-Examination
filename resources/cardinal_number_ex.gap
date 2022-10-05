@@ -76,5 +76,8 @@ calculate_nLH_number := function(G)
 #		Print("\n");
 #	od;
 #
+
+	Print("\n", "Done ......", "\n");
+
 	return;
 end; # calculate_nLH_number := function()

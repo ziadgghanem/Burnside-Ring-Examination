@@ -4,7 +4,7 @@ LoadPackage("EquiDeg");
 G:=DirectProduct(SymmetricGroup(2),SymmetricGroup(4));
 
 
-master := function(G)
+master := function(G, name)
 	
 	Print("\n", "Building Burnside Ring ......", "\n");
 	# ConjugacyClassesSubgroups: lists all conjugacy classes of subgroups of G
@@ -26,9 +26,17 @@ master := function(G)
 	Read("resources/multiplication_table_ex.gap");
 	calculate_multiplication_table(G);
 
+	Print("\n", "Calculating Irreducible Orbit Types ......", "\n");
+	Read("resources/calculate_irreducible_orbit_types_ex.gap");
+	calculate_irr_orbtyps(irr);
+
+	Print("\n", "Calculating Maximal Orbit Types ......", "\n");
+	Read("resources/calculate_max_orbit_types_ex.gap");
+	calculate_max_orbtyps(irr);
+
 	Print("\n", "Writing to file ......", "\n");
 	Read("resources/write_file_ex.gap");
-	create_file(G_Multiplication_Table, "s2_s4");
+	create_file([G_Multiplication_Table, irr_orbtyps, max_orbtyps], name);
 
 	Print("\n", "Done ......", "\n");
 	
